@@ -1,0 +1,356 @@
+/*Reseteo de márgenes por defecto en HTML*/
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/*Tamaño de letra de la página*/
+html{
+    font-size: 16px;
+}
+/*Mantener el encabezado fijo*/
+header {
+    background-color:white;
+    position:fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+/*Ubicación Logos en Encabezado*/
+.PDALogo {
+    float: left;
+    margin:20px;
+}
+.UCCSLogo {
+    float: right;
+    margin: 30px;
+}
+/*Color de la letra título*/
+h1{
+    color:darkblue;
+    float:inline-start;    
+}
+
+/*Color de la letra 1er Subtítulo*/
+h2{
+    color:darkblue;
+    padding: 10px;
+}
+
+/*Color de la letra 2do Subtítulo*/
+p {
+    text-align: justify;
+    padding: 10px;
+}
+
+/*Fuentes para el cuerpo*/
+body{
+    font-family: Calibri, Arial, Verdana, Tahoma;
+    padding: 180px 5px 0;
+}
+
+/*Características de la barra menú*/
+.navbar{
+    background: whitesmoke;
+    float: left;
+    height: 45px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.nav-toggle {
+    color:darkblue;
+    background: none;
+    border: none;
+    font-size: 30px;
+    padding: 10px 20px;
+    display: none;
+    
+}
+/*Botones luz de neón*/
+.btn-neon{
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color:darkblue;
+    letter-spacing: 4px;
+    font-size: 20px;   
+    font-weight: bold; 
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.2s;
+}
+.btn-neon:hover{
+    background: lightgreen;
+    box-shadow: 0 0 10px lightgreen, 0 0 40px lightgreen, 0 0 80px lightgreen;
+    transition-delay: 1s;
+}
+.btn-neon span{
+    position: absolute;
+    display: block;
+}
+#span1{
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,transparent,lightgreen);
+}
+.btn-neon:hover #span1{
+    left: 100%;
+    transition: 1s;
+}
+#span3{
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg,transparent,lightgreen);
+}
+.btn-neon:hover #span3{
+    right: 100%;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+#span2{
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,lightgreen);
+}
+.btn-neon:hover #span2{
+    top: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+}
+#span4{
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,lightgreen);
+}
+.btn-neon:hover #span4{
+    bottom: 100%;
+    transition: 1s;
+    transition-delay: 0.75s;
+}
+/*Layout con Grid - Index*/
+.grid-container {
+    display: grid;
+    height: 800px;
+    grid-template-areas: 'header header' 'content1 content2' 'content3 content3' 'content4 content4' 'footer footer';
+    grid-template-rows: 165px auto auto auto 60px;
+    gap: 10px 10px;
+    margin: 10px;
+}
+
+.item1 {
+    grid-area: header;
+    padding-left: 60px;
+}
+.item2 {
+    grid-area: content1;
+}
+.item3 {
+    grid-area: content2;
+    background-color: lightgrey;
+    border-radius: 5px;
+    padding: 10px;
+}
+.item4 {
+    grid-area: content3;
+    background-color: lightgrey;
+    border-radius: 5px;
+    padding: 10px;
+}
+.item5 {
+    grid-area: content4;
+}
+.item6 {
+    grid-area: footer;
+    grid-template-rows: 50px auto auto 50px;
+    grid-template-areas: 'PDALogoBlanco' 'ul' 'Copyright' 'RRSS';
+    background-color:blue;    
+    padding: 5px 40px 0px;
+    font-size: 12px;
+    color: white;
+}
+.item6 .PDALogoBlanco {
+    display: flex;
+    float: left;
+    height: 50px;
+    padding: 2px 10px 5px;    
+}
+.item6 ul {
+    display: flex;
+    float:left;
+    list-style: none;
+    height: 25px;    
+    padding: 0px 15px 15px 0px;    
+    margin: 2px 100px 2px;
+    
+}
+.item6 .Copyright {
+    display: flex;
+    float: left;
+    height: 25px;    
+    padding: 0px 50px 5px;    
+    margin: 2px 350px 2px;
+    align-content: center;
+    
+}
+.item6 .RRSS {
+    float: right;
+    padding: 15px 10px 10px;    
+}
+
+/*Características de la barra de RRSS*/
+.social-bar{
+    position: fixed;
+    right: 0;
+    top: 47%;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 100;
+}
+
+.icon{
+    color: white;
+    text-decoration: none;
+    padding: 0.7rem;
+    display: flex;
+    transition: all 0.5s;
+}
+
+.icon-twitter{
+    background: #339dc5;
+}
+
+.icon-facebook{
+    background: #2e406e;
+}
+
+.icon-instagram{
+    background: #3f60a5;
+}
+
+.icon-youtube{
+    background: #e83028;    
+}
+
+.icon:first-child{
+    border-radius: 1rem 0 0 0; 
+}
+
+.icon:last-child{
+    border-radius: 0 0 0 1rem;
+}
+
+.icon:hover{
+    padding-right: 3rem;
+    border-radius: 1rem 0 0 1rem;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.42);
+}
+
+/*Estilos para el formulario de contactos*/
+.contentcontacto {
+    float: left;
+    width: 40%;
+    height: 800px;
+    margin: 5px;    
+}
+.contentcontacto .form .form-header .form-title {
+    font-weight: normal;
+    font-family: Calibri, Arial, Verdana, Tahoma;
+    color: darkblue;
+    text-align: center;
+    padding: 14px 0;
+    font-size: 32px;
+}
+.contentcontacto .form .form-header .form-title span {
+    color: darkblue;
+    font-size: 32px;
+}
+.contentcontacto .form {
+    background: #D4F6CC;
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    padding: 5px 35px;
+    margin-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 3px;
+    margin: 10px;
+}
+.contentcontacto .form .form-label {
+    display: block;
+    color: darkblue;
+    font-size: 16px;
+    font-weight: bolder;
+    font-family: Calibri, Arial, Verdana, Tahomato;    
+}
+.contentcontacto .form .form-input, .form-textarea {
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    outline: none;
+    border-bottom: 2px solid darkblue;
+    width: 100%;
+    padding: 8px 6px;
+    margin-bottom: 5px;
+    border-radius: 2px;
+    font-size: 14px;
+    color: #fff;
+    font-family: Calibri, Arial, Verdana, Tahoma;
+}
+.contentcontacto .form .form-textarea {
+    resize: vertical;
+    max-height: 300px;
+    min-height: 100px;
+    max-height: 300px;
+    min-height: 100px;
+}
+.contentcontacto .form .btn-submit {
+    width: 100%;
+    font-family: Calibri, Arial, Verdana, Tahoma;
+    font-weight: bolder;
+    color: darkblue;
+    outline: none;
+    background: #339dc5;
+    font-size: 16px;
+    border: none;
+    padding: 15px 0;
+    cursor: pointer;
+    transition: all 2s ease;
+}
+.contentcontacto .form .btn-submit:hover {
+    background: #c3ff99;
+}
+.contentcontacto a {
+    font-size: 16px;
+    display: inline-block;
+    text-decoration: none;
+    width: 100%;
+    margin-bottom: 5px;
+    color: black;
+    font-weight: 700;
+}
+.contentcontacto a i {
+    color: darkblue;
+    margin-right: 10px;
+}
+/*Fin estilo para el formulario de contactos*/
+
+.map .form {
+    background: none;
+    float:left;
+    width: 750px;
+    height: 800px;
+    margin: 15px;
+}
+/*Fin estilos para el formulario de contactos*/
